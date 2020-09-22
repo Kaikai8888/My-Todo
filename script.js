@@ -23,3 +23,25 @@ function addItem(text) {
   list.appendChild(newItem);
   addDragSetting(newItem);
 }
+
+// Create and clear input
+const addBtn = document.querySelector("#addBtn");
+addBtn.addEventListener("click", (event) => {
+  readAndCreate(event);
+  event.target.previousElementSibling.value = "";
+});
+
+const input = document.querySelector("#newTodo");
+input.addEventListener("keydown", (event) => {
+  if (event.keyCode === 13) {
+    readAndCreate(event);
+    event.target.value = "";
+  }
+});
+
+function readAndCreate(event) {
+  const inputValue = document.querySelector("#newTodo").value;
+  if (inputValue) {
+    addItem(inputValue);
+  }
+}
