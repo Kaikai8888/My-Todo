@@ -2,6 +2,8 @@
 
 A simple web application for recording todos and prioritizing tasks.
 
+https://kaikai8888.github.io/My-Todo/
+
 ## Features
 
 - listing todos
