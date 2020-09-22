@@ -45,3 +45,19 @@ function readAndCreate(event) {
     addItem(inputValue);
   }
 }
+
+// Delete ,check
+const main = document.querySelector("main");
+main.addEventListener("click", function (event) {
+  const li = event.target.parentElement;
+  if (event.target.classList.contains("delete")) {
+    li.remove();
+  } else if (event.target.tagName === "LABEL") {
+    event.target.classList.toggle("checked");
+    if (li.parentElement.id === "my-todo") {
+      done.appendChild(li);
+    } else {
+      list.appendChild(li);
+    }
+  }
+});
